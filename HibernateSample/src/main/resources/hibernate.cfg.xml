@@ -7,7 +7,7 @@
 	<session-factory>
 
 		<property name="connection.driver_class">org.hsqldb.jdbc.JDBCDriver</property>
-		<property name="connection.url">jdbc:hsqldb:hsql://localhost/</property>
+		<property name="connection.url">jdbc:hsqldb:mem:hibernate</property>
 		<property name="connection.username">sa</property>
 		<property name="connection.password"></property>
 
@@ -23,22 +23,15 @@
 		<!-- Disable the second-level cache -->
 		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 		<!-- Echo all executed SQL to stdout -->
-		<property name="show_sql">true</property>
+		<property name="show_sql">false</property>
 
 		<!-- Drop and re-create the database schema on startup -->
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">create-drop</property>
 
 		<!-- <property name="hibernate.search.default.directory_provider">filesystem</property> 
 			<property name="hibernate.search.default.indexBase">target/indexes</property> -->
-		<mapping class="com.home.hibernate.entity.Person" />
-		<mapping class="com.home.hibernate.entity.Vehicle" />
-		<mapping class="com.home.hibernate.entity.Phone" />
-		<mapping class="com.home.hibernate.entity.House" />
-		<mapping class="com.home.hibernate.entity.Owner" />
-		<mapping class="com.home.hibernate.entity.CarOwner" />
-		<mapping class="com.home.hibernate.entity.Car" />
-		<mapping class="com.home.hibernate.entity.TwoWheeler" />
-		<mapping class="com.home.hibernate.entity.FourWheeler" />
+		<mapping class="com.home.hibernate.entity.Catalog" />
+		<mapping class="com.home.hibernate.entity.CatalogVersion" />
 
 
 	</session-factory>
